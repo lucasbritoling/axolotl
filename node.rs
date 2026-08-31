@@ -60,11 +60,11 @@ const _: () = {
 
     // 2. Validação Cirúrgica de Offsets (Comprova o casamento exato com o seu Codec)
     // Garante que o u32 do BoundIndex está exatamente onde o buffer[4..8] lê
-    assert!(offset_of!(Node, BoundIndex::db_index) == 4, "Física da RAM violada: db_index deve iniciar no offset 4!");
+    assert!(offset_of!(Node, BoundIndex.db_index) == 4, "Física da RAM violada: db_index deve iniciar no offset 4!");
     
     // Garante que os CompactCids de Lambda e Apply estão exatamente onde o buffer[8..24] lê
-    assert!(offset_of!(Node, Lambda::body) == 8, "Física da RAM violada: body do Lambda deve iniciar no offset 8!");
-    assert!(offset_of!(Node, Apply::argument) == 8, "Física da RAM violada: argument do Apply deve iniciar no offset 8!");
+    assert!(offset_of!(Node, Lambda.body) == 8, "Física da RAM violada: body do Lambda deve iniciar no offset 8!");
+    assert!(offset_of!(Node, Apply.argument) == 8, "Física da RAM violada: argument do Apply deve iniciar no offset 8!");
 };
 
 impl Node {
